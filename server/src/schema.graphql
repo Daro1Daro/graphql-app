@@ -1,0 +1,59 @@
+scalar Date
+
+enum Sort {
+  asc
+  desc
+}
+
+input BookOrderByInput {
+  title: Sort
+  description: Sort
+  published: Sort
+}
+
+type Query {
+    books(
+        filter: String,
+        orderBy: BookOrderByInput
+    ): [Book!]!
+    authors: [Author!]!
+}
+
+type Mutation {
+    createBook(
+        title: String!,
+        description: String,
+        published: Date,
+        authorId: String,
+        cover: String,
+    ): Book!
+    deleteBook(
+        bookId: Int! 
+    ): Book!
+    createAuthor(
+        firstName: String!,
+        lastName: String!,
+        birthDate: Date,
+    ): Author!
+}
+
+type Subscription {
+    newBook: Book 
+}
+
+type Book {
+    id: ID!
+    title: String!
+    description: String
+    published: Date
+    author: Author
+    cover: String
+}
+
+type Author {
+    id: ID!
+    firstName: String!
+    lastName: String!
+    birthDate: Date
+    books: [Book]
+}

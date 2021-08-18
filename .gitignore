@@ -3,6 +3,10 @@
 /server/node_modules
 /client/.graphcoolrc
 
+# prisma
+*.db
+*.db-journal
+
 # production
 /client/build
 

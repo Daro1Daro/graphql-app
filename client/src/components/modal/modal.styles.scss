@@ -1,0 +1,53 @@
+.modal {
+    .backdrop {
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        background: rgba(0, 0, 0, 0.3);
+        z-index: 500;
+    }
+
+    .wrapper {
+        position: fixed;
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 700;
+
+        .container {
+            background: white;
+            position: relative;
+            margin: auto;
+            border-radius: 10px;
+
+            .header {
+                display: flex;
+                justify-content: center;
+                padding: 10px;
+            }
+
+            .content {
+                padding: 10px;
+                min-height: 100px;
+                overflow-x: hidden;
+                overflow-y: auto;
+            }
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
